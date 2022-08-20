@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="prefetch" href="./assets/ui/stars/0.png">
+    <link rel="prefetch" href="./assets/ui/stars/1.png">
+    <link rel="prefetch" href="./assets/ui/stars/2.png">
+    <link rel="prefetch" href="./assets/ui/stars/3.png">
+    <title>TypQwerty | Sreya Saju</title>
+
+    <body ondragstart="return false;" ondrop="return false;">
+        <div id="test">
+        <div class="progress-bar" id=progress-bar ></div>
+          <div style="text-align:center">
+            <br>
+            <h1 class="word" id="current-word">loading...</h1>
+            <div class="inputbox">
+                <input style="color:white" autofocus autocomplete="off" id="text-input" type="text" placeholder="Start Typing"></input>
+            </div>
+            
+            <p>Time remaining:</p><p id="time"></p>
+            <p>Score:</p>
+            <p id="score"></p>
+            <div class="result" id="result"></div><br>
+         </div>
+      </div>
+
+        <div style="display:none;" class="firstbox" id=scoreboard><br>
+            <img id='star' class="star"> 
+            <p>Your score is </p><p id='grandscore'>--</p> <p>out of 10</p>
+            <button onclick="restartGame()" id="restart-button" class="orange">Restart</button>
+    
+        </div>
+        <img  class="sreyasaju" src="./assets/ui/sreyasaju.png">
+
+        <script src="./script.js"></script>
+        <script>
+            let time = 16
+            timeDisplay.innerHTML= time;
+            const questions = [
+            'nostalgia',
+            'lunar',
+            'bulletin',
+            'culprit',
+            'irresistible',
+            'pedestrian',
+            'supervisor',
+            'slumber',
+            'tolerate',
+            'voyage',
+            'threatening',
+            'mileage',
+            'innocence',
+            'ordinarily',
+            'solemn',
+            'tournament',
+            'smudge',
+            'securing',
+            'scarcity',
+            'penicillin',
+            'oasis',
+            'language',
+            'intelligent',
+            'hesitate',
+            'failure',
+            'evident',
+            'illustration',
+            'genuine',
+            'immobilize',
+            'pamphlet',
+            'contagious',
+            'denominator',
+            'encyclopedia',
+            'familiar',
+            'departure',
+        ]
+        
+        var maxQuestions = 10;
+        var scoreboard = document.getElementById("scoreboard")
+        var test = document.getElementById("test")
+        function checkIfPlaying() {
+            if((!is_playing && time === 0) || score === maxQuestions){
+                result.innerHTML= "Game Over!";
+                setGrandScore()
+                textInput.disabled = true;
+                scoreboard.style.display='block';
+                test.style.display='none';
+                
+        setStars(score);
+            }
+        }
+
+        function setGrandScore(){
+            var grandscore = document.getElementById('grandscore')
+            grandscore.innerHTML= score
+        }
+
+        function restartGame(restart){
+        window.location.replace("snail.html");
+        }
+        function setStars(score){
+            let imgStar = document.getElementById("star")
+            if (score==10){
+                imgStar.src="./assets/ui/stars/3.png"
+            }else if(score <=9 && score >=6){
+                imgStar.src="./assets/ui/stars/2.png"
+            }else if(score <6 && score >=1){
+                imgStar.src="./assets/ui/stars/1.png"
+            }else{
+                imgStar.src="./assets/ui/stars/0.png"
+            };
+        }
+        
+    </script>
+
+</body>
+</html>
+
