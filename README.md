@@ -41,4 +41,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 ----
-Copyright &copy; 2022 [Sreya Saju](https://github.com/sreyasaju)
+Copyright &copy; 2022-2023 [Sreya Saju](https://github.com/sreyasaju)
